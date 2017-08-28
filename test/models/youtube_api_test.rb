@@ -16,9 +16,9 @@ class YoutubeApiTest < ActiveSupport::TestCase
     assert_equal playlist.title, 'SURICATE'
   end
   
-  # test "crete playlist" do
-  #   playlist = @youtube_api.create_playlist 'this is a test title'
-  #   assert_equal playlist.title, 'this is a test title'
-  # end
+  test "crete playlist" do
+    playlist = @youtube_api.create_playlist 'this is a test title'
+    assert_equal playlist.title, 'this is a test title'
+  end
   
 end
