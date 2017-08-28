@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
-#Youtube API from https://github.com/Fullscreen/yt
+# Youtube API from https://github.com/Fullscreen/yt
 gem 'yt', '~> 0.28.0'
-#Devise for authentication
+# Devise for authentication
 gem 'devise'
+# Google's OAuth2 strategy for devise
+gem 'omniauth-google-oauth2'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0'
