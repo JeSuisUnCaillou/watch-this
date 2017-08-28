@@ -15,10 +15,10 @@ class YoutubeApi
         Yt::Playlist.new id: id
     end
     
-     def create_playlist(title)
-        
-     end
-    
+    def create_playlist(title)
+        return {title: "nope"}
+    end
+
     
     
     private
