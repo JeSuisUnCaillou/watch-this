@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   
   test "creating an omniauth user" do
     name = "MonNom"
@@ -22,4 +19,5 @@ class UserTest < ActiveSupport::TestCase
     assert_equal user.email, email
     assert_equal user.google_token, token
   end
+  
 end
