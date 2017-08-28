@@ -1,4 +1,7 @@
 class YoutubeApi
+    API_KEY = ENV["YOUTUBE_API_KEY"]
+    OAUTH_CLIENT_ID = ENV["YOUTUBE_OAUTH_CLIENT_ID"]
+    OAUTH_CLIENT_SECRET = ENV["YOUTUBE_OAUTH_CLIENT_SECRET"]
     
     def initialize()
         initialize_secret_keys()
@@ -11,6 +14,10 @@ class YoutubeApi
     def get_playlist(id)
         Yt::Playlist.new id: id
     end
+    
+    # def create_playlist(title)
+        
+    # end
     
     
     
