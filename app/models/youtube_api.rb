@@ -16,7 +16,7 @@ class YoutubeApi
     end
     
     def create_playlist(title)
-        return {title: "nope"}
+        return OpenStruct.new(title: "nope")
     end
 
     
