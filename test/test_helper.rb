@@ -7,4 +7,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  def create_oauth_user(name, email, token)
+    User.from_omniauth(
+      OpenStruct.new(
+        info: OpenStruct.new(email: email, name: name), 
+        credentials: OpenStruct.new(token: token)
+      )
+    )
+  end
 end

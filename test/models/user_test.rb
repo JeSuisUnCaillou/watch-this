@@ -2,17 +2,15 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   
+  setup do
+    #@oauth_user = 
+  end
+  
   test "creating an omniauth user" do
     name = "MonNom"
     email = "moi@truc.plouf"
     token = "example_token"
-    
-    user = User.from_omniauth(
-      OpenStruct.new(
-        info: OpenStruct.new(email: email, name: name), 
-        credentials: OpenStruct.new(token: token)
-      )
-    )
+    user = create_oauth_user(name, email, token)
     
     assert user
     assert_equal user.name, name
