@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
     User.from_omniauth(
       OpenStruct.new(
         info: OpenStruct.new(email: email, name: name), 
-        credentials: OpenStruct.new(token: token)
+        credentials: OpenStruct.new(refresh_token: token)
       )
     )
   end

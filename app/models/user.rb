@@ -11,7 +11,6 @@ class User < ApplicationRecord
     
     user = User.where(email: data['email']).first
 
-    # Store the google token
     unless user
     #  Users are created if they don't exist
         user = User.create(name: data['name'],
@@ -20,6 +19,7 @@ class User < ApplicationRecord
         )
     end
     
+    # Store the google token
     if refresh_token
        user.update(google_token: refresh_token) 
     end

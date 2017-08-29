@@ -13,9 +13,9 @@ class UserTest < ActiveSupport::TestCase
     user = create_oauth_user(name, email, token)
     
     assert user
-    assert_equal user.name, name
-    assert_equal user.email, email
-    assert_equal user.google_token, token
+    assert_equal name, user.name
+    assert_equal email, user.email
+    assert_equal token, user.google_token
   end
   
 end
