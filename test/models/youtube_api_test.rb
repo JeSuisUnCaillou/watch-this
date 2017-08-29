@@ -4,6 +4,10 @@ class YoutubeApiTest < ActiveSupport::TestCase
   
   setup do
     @youtube_api = YoutubeApi.new()
+    
+    Yt.configure do |config|
+      config.log_level = :debug
+    end
   end
   
   test "basic check of the youtube API" do
@@ -16,9 +20,11 @@ class YoutubeApiTest < ActiveSupport::TestCase
     assert_equal playlist.title, 'SURICATE'
   end
   
-  test "crete playlist" do
-    playlist = @youtube_api.create_playlist "token_test", 'this is a test title'
-    assert_equal playlist.title, 'this is a test title'
+   test "create playlist" do
+     playlist = @youtube_api.create_playlist "1/e-7r4JrN8w1I30AAkrIDvnGcx-388aRGBFtidYuBdPM", 'this is a test title'
+     assert_equal playlist.title, 'this is a test title'
   end
+  
+  
   
 end

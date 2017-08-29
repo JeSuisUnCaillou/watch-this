@@ -9,7 +9,7 @@ class User < ApplicationRecord
     data = access_token.info
     refresh_token = access_token.credentials.refresh_token
     
-    user = User.where(email: data['email']).first
+    user = User.where(email: data['email']).first || User.where(name: data['name']).first
 
     unless user
     #  Users are created if they don't exist
