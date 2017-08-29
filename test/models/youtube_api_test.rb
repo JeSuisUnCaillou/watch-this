@@ -17,7 +17,7 @@ class YoutubeApiTest < ActiveSupport::TestCase
   end
   
   test "crete playlist" do
-    playlist = @youtube_api.create_playlist 'this is a test title'
+    playlist = @youtube_api.create_playlist "token_test", 'this is a test title'
     assert_equal playlist.title, 'this is a test title'
   end
   

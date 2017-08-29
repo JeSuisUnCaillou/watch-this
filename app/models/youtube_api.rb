@@ -15,7 +15,12 @@ class YoutubeApi
         Yt::Playlist.new id: id
     end
     
-    def create_playlist(title)
+    def create_playlist(google_token, playlist_name)
+        # account = Yt::Account.new refresh_token: google_token
+        
+        # playlist = account.create_playlist(title: playlist_name)
+        
+        #return playlist
         return OpenStruct.new(title: "nope")
     end
 
