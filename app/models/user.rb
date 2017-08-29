@@ -7,21 +7,23 @@ class User < ApplicationRecord
          
   def self.from_omniauth(access_token)
     data = access_token.info
-    token = access_token.credentials.token
+    refresh_token = access_token.credentials.refresh_token
     
     user = User.where(email: data['email']).first
 
     # Store the google token
-    if user
-        user.update(google_token: token)
-    else
+    unless user
     #  Users are created if they don't exist
         user = User.create(name: data['name'],
             email: data['email'],
-            password: Devise.friendly_token[0,20],
-            google_token: token
+            password: Devise.friendly_token[0,20]
         )
     end
+    
+    if refresh_token
+       user.update(google_token: refresh_token) 
+    end
+    
     user
   end
 end
