@@ -21,6 +21,7 @@ class YoutubeApiTest < ActiveSupport::TestCase
   end
   
    test "create playlist" do
+     #Use the refresh token of my personnal account
      playlist = @youtube_api.create_playlist "1/e-7r4JrN8w1I30AAkrIDvnGcx-388aRGBFtidYuBdPM", 'this is a test title'
      assert_equal playlist.title, 'this is a test title'
   end
