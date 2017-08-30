@@ -2,6 +2,9 @@
 
 
 <div class="row">
+    <%= "You don't have any playlists" if @playlists.empty? %>
+    
+    
     <% @playlists.each do |playlist| %>
         <div class="col-md-2 mb-2">
             <%= render partial: "users/playlist", locals: {playlist: playlist} %>    
