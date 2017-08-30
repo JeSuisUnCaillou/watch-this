@@ -1,4 +1,5 @@
-<h2>My playlists</h2>
+<h2>My playlists <%= link_to "+", new_playlists_path, class: "btn btn-primary"%></h2>
+
 
 <div class="row">
     <% @playlists.each do |playlist| %>

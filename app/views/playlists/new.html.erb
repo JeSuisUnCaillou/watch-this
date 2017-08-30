@@ -1,0 +1,9 @@
+<h1>Create a new playlist</h1>
+
+<%= form_tag playlists_path, method: :post do %>
+    <%= label_tag :title %><br />
+    <%= text_field_tag "playlist[title]" %><br />
+    <%= label_tag :description %><br />
+    <%= text_area_tag "playlist[description]" %><br />
+    <%= submit_tag %>
+<% end %>

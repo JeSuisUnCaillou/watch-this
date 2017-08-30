@@ -8,8 +8,8 @@
             <% end %>
             <h4 class="card-title p-2"><%= playlist.title %></h4>
             <p class="card-text p-2">
-                <%= playlist.description %>
-                <%= playlist.published_at.to_formatted_s(:short) %>
+                <%= playlist.description %><br />
+                <small><%= playlist.published_at.to_formatted_s(:short) %></small>
             </p>
         </div>
     </div>
