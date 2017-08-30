@@ -17,9 +17,7 @@ class YoutubeApi
     
     def get_playlists(google_token)
         account = Yt::Account.new refresh_token: google_token
-        ap account
         channel = account.channel
-        ap channel.playlists.count
         channel.playlists
     end
     
