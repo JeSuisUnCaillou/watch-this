@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :recoverable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
          
   def self.from_omniauth(access_token)
@@ -10,7 +11,7 @@ class User < ApplicationRecord
     refresh_token = access_token.credentials.refresh_token
     
     user = User.where(email: data['email']).first || User.where(name: data['name']).first
-
+    
     unless user
     #  Users are created if they don't exist
         user = User.create(name: data['name'],
