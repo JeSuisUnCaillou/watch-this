@@ -118,6 +118,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     popper_js (1.11.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -212,6 +213,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-google-oauth2
+  pg
   rails (= 5.0.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
