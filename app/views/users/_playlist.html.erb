@@ -1,0 +1,15 @@
+<% playlist ||= nil %>
+
+<% if playlist %>
+    <div class="card p-2">
+        <div class="card-block">
+            
+            <h3 class="card-title"><%= playlist.title %></h3>
+            <p class="card-text">
+                <%= playlist.description %>
+                <%= playlist.published_at.to_formatted_s(:short) %>
+            </p>
+        </div>
+    </div>
+    
+<% end %>

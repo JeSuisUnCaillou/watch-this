@@ -1,14 +1,10 @@
 
 <h1 class="text-center">Welcome <%= current_user.name if user_signed_in? %></h1>
 
-<div class="row">
-    <div class="col-md-12">
-        <% if user_signed_in? %>
-            
-        <% else %>
-            <div class="pt-5 text-center">
-                <%= render partial: "users/sign_in_button" %>
-            </div>
-        <% end %>
+<% if user_signed_in? %>
+    <%= render partial: "users/playlists" %>
+<% else %>
+    <div class="pt-5 text-center">
+        <%= render partial: "users/sign_in_button" %>
     </div>
-</div>
+<% end %>

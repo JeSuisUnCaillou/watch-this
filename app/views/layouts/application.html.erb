@@ -16,8 +16,7 @@
     <%= render partial: "layouts/navbar" %>
     
     <div class="container pt-2">
-      <% if notice %><p class="notice"><%= notice %></p><% end %>
-      <% if alert %><p class="alert"><%= alert %></p><% end %>
+      <%= render partial: "layouts/notice_and_alerts" %>
       <%= yield %>
     </div>
     
